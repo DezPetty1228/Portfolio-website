@@ -31,8 +31,6 @@ h1 {
     color: #1a1a1a; 
 }
 
-
-
 /* Heading 1 element hover effect */
 h1:hover {
     filter: grayscale(5%); /* Adds a slightly gray filter to the h1 headings when hovered over */
@@ -90,7 +88,7 @@ img {
     filter: grayscale(75%); /* This rids our pictures of 75% of their color */
     border-radius: 8px; /* Gives all images slightly rounded corners */
     max-width: 100%; /* Ensures all images stay within the width of their container */
-    max-height: 100%;
+    max-height: 100%; /* Ensures all images stay within the height of their container */
     display: block; /* By specifying block display we can ensure our images are able to be centered */
     margin: auto auto auto auto; /* This centers all images */
 }
@@ -146,13 +144,13 @@ footer {
     to {top: 0vw;} /* This lowers the navbar text onto the navbar */
 }
 
-
 /*Navbar hover effects */
 .Navbar a:hover {
     background-color: #f4f4f4; /* Defines the background color that will display when you hover over the link */
     color: black; /* This defines the font color that will display when navbar a elements are hovered over */
+    font-weight: bold; /* This makes the text on the navbar bold when hovered over */
     cursor: pointer;
-    transition: 0.5s ease-in;
+    transition: 0.5s ease-in; /* Creates a smooth transition for the hover trigger */
 }
 
 /* Navbar home button */
@@ -169,6 +167,13 @@ footer {
     bottom: 0; /* This ensures no space between the edge of the video and the bottom of the page */
     min-width: 100%; /* This ensures the video is displayed across the full width of the page */
     z-index: -1; /* This places the video behind the other elements on the page */
+}
+
+/* Screens that are 576px and smaller will not display the background video */
+@media screen and (max-width: 576px) {
+    #Typing_Video {
+        display: none;
+    }
 }
 
 /* Texts over the video */
@@ -310,7 +315,7 @@ footer {
     float: left;
     width: 50%; /* This ensures the column takes up half of the page width */
     padding: 1.6%;
-    height: 450px; /* This sets the height of the column to 450px -  this may need to be adjusted depending on the text you enter */
+    height: 450px; /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
     background-color: #f2f2f2; /* Sets the background color of the left columns */
 }
 
@@ -428,8 +433,9 @@ button:hover, .form-container .btn:hover {
 }
 /***** End of Contact Form Styling *****/
 
+/***** Media Query Section *****/
 /*Media rules for paragraph font size for different screen sizes*/
-@media screen and (max-width: 527px) {
+@media screen and (max-width: 5) {
     p {
         font-size: 3.75vw;
     }
@@ -520,3 +526,4 @@ button:hover, .form-container .btn:hover {
         margin-top: 0;
     }
 }
+/***** End of Media Query Section *****/
